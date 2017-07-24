@@ -102,6 +102,9 @@ function numberToWords(number) {
   }
   else {
     for (var i = 0; i < num.length; i++) {
+      if (number == 0) {
+        return num[0][1]
+      }
       if (number == num[i][0]) {
         return num[i][1] + ' '
       }
@@ -138,6 +141,7 @@ console.log('11111111111100 = ' + numberToWords(11111111111100));
 console.log('99900000000010 = ' + numberToWords(99900000000010));
 console.log('111111111110110 = ' + numberToWords(111111111110110));
 console.log('999000000000000 = ' + numberToWords(999000000000000));
+
 
 
 
