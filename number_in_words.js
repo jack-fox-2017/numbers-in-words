@@ -46,12 +46,8 @@ function numberToWords(number) {
       for (var i = 0; i < digit.length; i++) {
         if(num[0]===digit[i].toString()){
           number = number - digit[i]*1000000
-          if (digit[i]===1) {
-            temp.push('sejuta');
-          } else {
-            temp.push(word[i]);
-            temp.push('juta');
-          }
+          temp.push(word[i]);
+          temp.push('juta');
         }
         //console.log('number ',number);
       }
@@ -158,8 +154,8 @@ function numberToWords(number) {
 
 // Driver code
 //console.log(numberToWords(1000000));
-console.log(numberToWords(135050));
-console.log(numberToWords(10));
+console.log(numberToWords(1001010));
+console.log(numberToWords(110));
 console.log(numberToWords(12));
 console.log(numberToWords(11));
 console.log(numberToWords(19));
