@@ -6,7 +6,8 @@ function numberToWords(number) {
   var perkalian =0;
   while(number>0) {
   var num = number.toString()
-    if(num.length>8) {
+
+    if(num.length>8) {;
       for (var i = 0; i < digit.length; i++) {
         if(num[0]===digit[i].toString()){
           number = number - digit[i]*100000000
@@ -159,32 +160,31 @@ function numberToWords(number) {
 // Driver code
 //console.log(numberToWords(1000000));
 console.log(numberToWords(135050));
-console.log(numberToWords(10));
-console.log(numberToWords(12));
-console.log(numberToWords(11));
-console.log(numberToWords(19));
-console.log(numberToWords(27));
-console.log(numberToWords(100));
-console.log(numberToWords(127));
-console.log(numberToWords(8770));
-console.log(numberToWords(8771));
-console.log(numberToWords(10000));
-console.log(numberToWords(10500));
-console.log(numberToWords(28770));
-console.log(numberToWords(11100));
-console.log(numberToWords(13100));
-console.log(numberToWords(110100000));
-console.log(numberToWords(113100));
-console.log(numberToWords(213100));
-console.log(numberToWords(1131110));
-console.log(numberToWords(2131320));
-console.log(numberToWords(11131110));
-console.log(numberToWords(22131320));
-console.log(numberToWords(231131110));
-console.log(numberToWords(122131320));
-console.log(numberToWords(111111111));
-console.log(numberToWords(999999999));
-console.log(numberToWords(41000));
+// console.log(numberToWords(10));
+// console.log(numberToWords(12));
+// console.log(numberToWords(11));
+// console.log(numberToWords(19));
+// console.log(numberToWords(27));
+// console.log(numberToWords(100));
+// console.log(numberToWords(127));
+// console.log(numberToWords(8770));
+// console.log(numberToWords(8771));
+// console.log(numberToWords(10000));
+// console.log(numberToWords(10500));
+// console.log(numberToWords(28770));
+// console.log(numberToWords(11100));
+// console.log(numberToWords(13100));
+// console.log(numberToWords(110100000));
+// console.log(numberToWords(113100));
+// console.log(numberToWords(213100));
+// console.log(numberToWords(1131110));
+// console.log(numberToWords(2131320));
+// console.log(numberToWords(11131110));
+// console.log(numberToWords(22131320));
+// console.log(numberToWords(231131110));
+// console.log(numberToWords(122131320));
+// console.log(numberToWords(999999999));
+// console.log(numberToWords(41000));
 
 module.exports = {
   numberToWords: numberToWords
