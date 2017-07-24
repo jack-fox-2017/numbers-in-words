@@ -50,10 +50,26 @@ function numberToWords(number) {
       return numberToWords((number -(number%1000000))/1000000) + " juta " + numberToWords(number%1000000)
     }
 
+    else if(number < 1000000000000){
+      return numberToWords((number-(number%1000000000))/1000000000) + " milyar "+ numberToWords(number%1000000000)
+    }
+
+    else if(number < 1000000000000000){
+      return numberToWords((number-(number%1000000000000))/1000000000000)+ " triliun " + numberToWords(number%1000000000000)
+    }
 
 }
 // Driver code
-console.log(numberToWords(99900000));
+console.log(numberToWords(9500));
+console.log(numberToWords(95000));
+console.log(numberToWords(950000));
+console.log(numberToWords(9500000));
+console.log(numberToWords(95000000));
+console.log(numberToWords(950000000));
+console.log(numberToWords(9500000000));
+console.log(numberToWords(95000000000));
+console.log(numberToWords(950000000000));
+console.log(numberToWords(955000000000000));
 
 module.exports = {
   numberToWords: numberToWords
