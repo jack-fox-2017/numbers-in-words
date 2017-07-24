@@ -1,7 +1,7 @@
-console.log("ES6 compiler is starting");
-let toWords = n => {
-  // Your code here
-};
+
 
 // Driver code
-console.log(toWords(1000000000000000000000));
+console.log(toWord(3));
+console.log(toWord(19));
+console.log(toWord(84));
+// console.log(toWords(1000000000000000000000));
