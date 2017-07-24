@@ -19,39 +19,39 @@ function numberToWords(number) {
   else if (number<2000) {
     return 'seribu ' + numberToWords(number%1000)
   }
-  else if (number<10000) {
-    return numberToWords((number-(number%1000))/1000) + ' ribu ' + numberToWords(number%1000)
-  }
-  else if (number<100000) {
-    return numberToWords((number-(number%1000))/1000) + ' ribu ' + numberToWords(number%1000)
-  }
+  // else if (number<10000) {
+  //   return numberToWords((number-(number%1000))/1000) + ' ribu ' + numberToWords(number%1000)
+  // }
+  // else if (number<100000) {
+  //   return numberToWords((number-(number%1000))/1000) + ' ribu ' + numberToWords(number%1000)
+  // }
   else if (number<1000000) {
     return numberToWords((number-(number%1000))/1000) + ' ribu ' + numberToWords(number%1000)
   }
-  else if (number<10000000) {
-    return numberToWords((number-(number%1000000))/1000000) + ' juta ' + numberToWords(number%1000000)
-  }
-  else if (number<100000000) {
-    return numberToWords((number-(number%1000000))/1000000) + ' juta ' + numberToWords(number%1000000)
-  }
+  // else if (number<10000000) {
+  //   return numberToWords((number-(number%1000000))/1000000) + ' juta ' + numberToWords(number%1000000)
+  // }
+  // else if (number<100000000) {
+  //   return numberToWords((number-(number%1000000))/1000000) + ' juta ' + numberToWords(number%1000000)
+  // }
   else if (number<1000000000) {
     return numberToWords((number-(number%1000000))/1000000) + ' juta ' + numberToWords(number%1000000)
   }
-  else if (number<10000000000) {
-    return numberToWords((number-(number%1000000000))/1000000000) + ' milyar ' + numberToWords(number%1000000000)
-  }
-  else if (number<100000000000) {
-    return numberToWords((number-(number%1000000000))/1000000000) + ' milyar ' + numberToWords(number%1000000000)
-  }
+  // else if (number<10000000000) {
+  //   return numberToWords((number-(number%1000000000))/1000000000) + ' milyar ' + numberToWords(number%1000000000)
+  // }
+  // else if (number<100000000000) {
+  //   return numberToWords((number-(number%1000000000))/1000000000) + ' milyar ' + numberToWords(number%1000000000)
+  // }
   else if (number<1000000000000) {
     return numberToWords((number-(number%1000000000))/1000000000) + ' milyar ' + numberToWords(number%1000000000)
   }
-  else if (number<10000000000000) {
-    return numberToWords((number-(number%1000000000000))/1000000000000) + ' triliun ' + numberToWords(number%1000000000000)
-  }
-  else if (number<100000000000000) {
-    return numberToWords((number-(number%1000000000000))/1000000000000) + ' triliun ' + numberToWords(number%1000000000000)
-  }
+  // else if (number<10000000000000) {
+  //   return numberToWords((number-(number%1000000000000))/1000000000000) + ' triliun ' + numberToWords(number%1000000000000)
+  // }
+  // else if (number<100000000000000) {
+  //   return numberToWords((number-(number%1000000000000))/1000000000000) + ' triliun ' + numberToWords(number%1000000000000)
+  // }
   else if (number<1000000000000000) {
     return numberToWords((number-(number%1000000000000))/1000000000000) + ' triliun ' + numberToWords(number%1000000000000)
   }
