@@ -1,64 +1,38 @@
-function numberToWords(number, word=[]) {
+function numberToWords(number) {
   // Your code here
-  let str = number.toString();
-  //console.log(str);
-  let numLarge = [10,100,1000,10000,100000,1000000,10000000]
-  let numLarName = ['puluh','ratus','ribu', 'puluh ribu','ratus ribu', 'juta', 'puluh juta'];
-  for(let i=numLarge.length-1; i>=0; i--){
-    //console.log(numLarge[i]);
-    while(number >= numLarge[i]){
-      //console.log(numLarge[i]);
-      word.push(numWord(str[0]));
-      //console.log(numWord(str[0]));
-      if(str[0] == 1 && str[1] == 1 && str.length == 2){
-        word.splice(word.length-1,1);
-        word.push('sebelas');
-      }
-      else if(str[0] == 1 && str[1] > 1 && str.length == 2){
-        word.splice(word.length-1,1);
-        word.push(numWord(str[1])+' belas');
-      }
-      else if(str[0] == 1 && str[1] >= 0){
-        word.splice(word.length-1,1);
-        word.push('se'+numLarName[i]);
-      }
-      else{
-        word.push(numLarName[i]);
-      }
-      //console.log(number-parseInt(str[0])*numLarge[i]);
-      if(number<20){
-        return word.join(' ');
-      }
-      else{
-        //ini recursive
-        return numberToWords(number-(parseInt(str[0])*numLarge[i]), word);
-      }
-    }
+  let numWord = ' satu dua tiga empat lima enam tujuh delapan sembilan sepuluh sebelas belas'.split(' ');
+  let seNumWord = 'seratus seribu'.split(' ');
+  let largeNum = [10, 100, 1000, Math.pow(10,6), Math.pow(10,9), Math.pow(10,12), Math.pow(10,15)];
+  let largeNumWord = ' puluh ratus ribu juta milyar trilliun'.split(' ');
+  if(number < 12){
+    return numWord[number];
   }
-  word.push(numWord(str[0]));
-  return word.join(' ');
-}
-
-//added function for satuan
-function numWord(num){
-  let numUnit = [1,2,3,4,5,6,7,8,9];
-  let numUnitName = ['satu','dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan'];
-  for(let j=0; j<numUnit.length; j++){
-    if(num == numUnit[j]){
-      return numUnitName[j];
+  if(number > 11 && number < 20){
+    return numWord[number.toString().split('')[1]] +' '+ numWord[12];
+  }
+  if(number < Math.pow(10, 15)){
+    for(let i=0; i<largeNum.length; i++){
+      if(number < largeNum[i]){
+        if(number.toString().split('')[0] == 1 && i<4){
+          return 'se'+largeNumWord[i] +' '+ numberToWords(number%largeNum[i-1]);
+        }
+        return numberToWords((number - (number%largeNum[i-1]))/largeNum[i-1]) +" "+ largeNumWord[i] +" "+ numberToWords(number%largeNum[i-1]);
+      }
     }
   }
 }
 
 // Driver code
-console.log(numberToWords(1000000));
+console.log(numberToWords(1112123456789));
+console.log(numberToWords(123456789));
+console.log(numberToWords(789));
 console.log(numberToWords(4));
 console.log(numberToWords(27));
-console.log(numberToWords(102));
+console.log(numberToWords(99));
 console.log(numberToWords(999));
 console.log(numberToWords(201));
 console.log(numberToWords(111));
-console.log(numberToWords(10));
+console.log(numberToWords(1000));
 console.log(numberToWords(12));
 
 module.exports = {
