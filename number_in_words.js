@@ -10,10 +10,10 @@ function numberToWords(number) {
   if(number > 11 && number < 20){
     return numWord[number.toString().split('')[1]] +' '+ numWord[12];
   }
-  if(number < Math.pow(10, 15)){
+  if(number <= Math.pow(10, 15)){
     for(let i=0; i<largeNum.length; i++){
       if(number < largeNum[i]){
-        if(number.toString().split('')[0] == 1 && i<4){
+        if(number.toString().split('')[0] == 1 && i<=3){
           return 'se'+largeNumWord[i] +' '+ numberToWords(number%largeNum[i-1]);
         }
         return numberToWords((number - (number%largeNum[i-1]))/largeNum[i-1]) +" "+ largeNumWord[i] +" "+ numberToWords(number%largeNum[i-1]);
@@ -23,7 +23,7 @@ function numberToWords(number) {
 }
 
 // Driver code
-console.log(numberToWords(1112123456789));
+console.log(numberToWords(123456789123456));
 console.log(numberToWords(123456789));
 console.log(numberToWords(789));
 console.log(numberToWords(4));
